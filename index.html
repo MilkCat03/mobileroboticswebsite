@@ -29,21 +29,100 @@
             
             #header h1{
                 position: absolute;
-                top:-30vh;
+                top:-1%;
                 left:19vw;
                 font-size: 400%;
+            }
+
+            #flyoutMenu {
+                position:absolute;
+                display:none;
+                background-color: rgb(0, 0, 0);
+                width:100vw;
+                height:95vh;
+                top:5.1vh;
+            }
+
+            #flyoutMenu button{
+                width:100vw;
+                height:5%;
+                margin-top:2%;
+                font-size:5vw;
+            }
+
+            p{
+                font-size:5vw;
+                margin-left:1%;
+            }
+
+            #interested h2{
+                font-size: 8vw;
             }
         </style>
     </head>
     <body>
         <div id="header">
-            <button id="menuButton">☰</button>
+            <button onclick="flyout()" id="menuButton">☰</button>
             <h1>The Royal Ghostbusters</h1>
         </div>
+
+        <div id="flyoutMenu">
+            <button>Interested Students</button>
+            <button>Interested Parents</button>
+            <button>Interested Sponsors</button>
+            <button>Engineering Notebook</button>
+            <button>First Lego League (FLL)</button>
+            <button>First Tech Challenge (FTC)</button>
+            <button>Vex IQ Challenge</button>
+            <button>Documents For Robotics</button>
+            <button>The Robotics Hivemind</button>
+            <button>Cannon JHS</button>
+            <button>Youtube</button>
+            <button>Instagram</button>
+            <button>TikTok</button>
+            <button>list button</button>
+            <button>list button</button>
+            <button>Github</button>
+            <button>Login</button>
+        </div>
+
         <img id="homepageImage" src="homepage.jpg">
         <div id="content">
             <h1>Welcome to The Royal Ghostbusters!</h1>
+            <p>We are the Royal Ghostbusters. We are Cannon JHS's robotics team. We do not only just do robotics though, we also do community service, fundraising, and t-shirt design.</p>
+            <div id="interested">
+                <h2>Join or Support</h2>
+                <p>Are you interested in joining or supporting the Royal Ghostbusters?</p>
+            </div>
         </div>
-    
+
+        <script>
+            var flyoutclicked = false;
+            function flyout() {
+                if (flyoutclicked == false)
+                {
+                    flyoutclicked = true;
+                    document.getElementById("flyoutMenu").style.display = "block";
+                }
+                else 
+                {
+                    flyoutclicked = false;
+                    document.getElementById("flyoutMenu").style.display = "none";
+                }
+
+            }
+
+            var hasTouchScreen = false;
+
+            var UA = navigator.userAgent;
+                    hasTouchScreen = (
+                        /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test(UA) ||
+                        /\b(Android|Windows Phone|iPad|iPod)\b/i.test(UA)
+                    ); 
+
+            if (hasTouchScreen == false) {
+                window.location.href = "https://theroyalghostbusters.org";
+            }
+        </script>
     </body>
 </html>
